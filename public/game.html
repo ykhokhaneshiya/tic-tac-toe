@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome!</title>
+
+    <script>
+        if(!sessionStorage.name || !sessionStorage.matrixSize || !sessionStorage.winCount){
+            window.location = '/';
+        }
+    </script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <style>
+        .btn{ width: 50px; height: 50px; }
+
+        .main_outer { text-align: center; }
+    </style>
+
+</head>
+<body>
+    <div class="main_outer">
+        <div class="board">
+            <button id="startGame">Start New Game</button>    
+            <h2 id="status">Please wait...</h2>
+            <div class="container">
+                <div class="matrixSize"></div>
+                <div class="playerLabel"></div>
+                <div class="circle">
+
+                    <svg width="80" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(110,110)">
+                            <circle r="100" class="e-c-base" />
+                            <g transform="rotate(-90)">
+                                <circle r="100" class="e-c-progress" />
+                                <g id="e-pointer">
+                                    <circle cx="100" cy="0" r="8" class="e-c-pointer" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    
+                    <div class="controlls">
+                        <div class="display-remain-time">30</div>
+                    </div>
+                </div>
+                <div class="winCount"></div>
+                <div class="systemLabel">System</div>
+                <div class="clearfix"></div>
+            </div>
+
+
+            
+            <ul id="gameBoard"></ul>
+        </div>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="./js/gamePlay.js"></script>
+</body>
+</html>
