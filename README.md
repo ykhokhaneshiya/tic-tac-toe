@@ -1,4 +1,4 @@
-# tic tac toe game
+# Tic Tac Toe Game
 
 The game developed using NodeJS + SocketIO. In which player have option to choose matrix size and winning count in the game.
 
